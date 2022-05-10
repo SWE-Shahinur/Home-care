@@ -1,0 +1,137 @@
+*{
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+body{
+  display:grid;
+  height: 100%;
+  place-items: center;
+  text-align: center;
+  background: lightSteelBlue;
+}
+.container{
+  position: relative;
+  width:400px;
+  top: 120px;
+  background: #fff;
+  padding:30px 30px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+}
+.container .post{
+  display:none;
+}
+.container .text{
+  font-size: 25px;
+  color:slateBlue;
+  font-weight: 550;
+}
+.container .edit{
+  position:absolute;
+  right:10px;
+  top:5px;
+  font-size: 16px;
+  color:#000;
+  font-weight: 500;
+  cursor: pointer;
+}
+.container .edit:hover{
+  text-decoration: underline;
+  color:slateBlue;
+}
+.container .star-widget input{
+  display: none;
+}
+.star-widget label{
+  font-size: 40px;
+  color:#444;
+  padding: 10px;
+  float:right;
+  transition: all 0.2s ease;
+}
+input:not(:checked) ~ label:hover,
+input:not(:checked) ~ label:hover ~ label{
+  color: #ffdd44;
+}
+input:checked~label{
+  color:#ffdd44;
+}
+input#rate-5:checked~label{
+  color:#fd4;
+  text-shadow:0 0 20px #952;
+}
+#rate-1:checked ~ form header:before{
+  content: "Hate Your Service 😫 ";
+}
+#rate-2:checked ~ form header:before{
+  content: "Don't Like Your Service😞 ";
+}
+#rate-3:checked ~ form header:before{
+  content: "Like Your Service 😊";
+}
+#rate-4:checked ~ form header:before{
+  content: "Love Your Service  😃";
+}
+#rate-5:checked ~ form header:before{
+  content: "Strongly Satisfied with service  😍";
+}
+.container form{
+  display: none;
+}
+input:checked ~ form{
+  display: block;
+}
+form header{
+  width:100%;
+  font-size: 25px;
+  color: slateBlue;
+  font-weight: 550;
+  margin: 5px 0 20px 0;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+form .textarea{
+  height: 100px;
+  width:100%;
+  overflow:hidden;
+}
+form .textarea textarea{
+  height: 100px;
+  width:100%;
+  outline: none;
+  color:#000;
+  border: 1px solid #333;
+  background: #fff;
+  padding: 10px;
+  font-size: 17px;
+  resize: none;
+}
+form .btn{
+  height: 45px;
+  width:100%;
+  margin:15px 0;
+  overflow: hidden;
+}
+form .btn button{
+  height: 100%;
+  width:100%;
+  border:0px;
+  outline: none;
+  background: linear-gradient(115deg ,#56d8e4 10% , #9f01ea 90%);
+  color:#fff;
+  font-size: 17px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+form .btn button:hover{
+  background:#3498db;
+}
